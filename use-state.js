@@ -18,4 +18,34 @@ export function App(props) {
   );
 }
 
+
 //Example 2
+import React from 'react';
+import {useState} from 'react';
+
+export default function App(props) {
+  const [fruit, setFruit] = useState("Mangoes");
+  const [fruit_adder, setFruitAdder] = useState(0);
+  
+  const fruitChanger = () => {
+    setFruit("Bananas");
+    console.log(fruit)
+  }
+
+  const fruitAdder = () => {
+    setFruitAdder(fruit_adder + 1 )
+  }
+
+  function fruitRemover(){
+    setFruitAdder(fruit_adder - 1);
+  }
+  return (
+    <div className='App'>
+      <h1><u>Using useState</u></h1>
+        <h2>I had {fruit_adder} {fruit} yesterday.</h2>
+        <button onClick = {fruitAdder}> add fruit</button>
+        <button onClick={fruitChanger}> Change fruit </button>
+        <button onClick={fruitRemover}> remove fruit </button>
+    </div>
+  );
+}
