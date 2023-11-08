@@ -1,0 +1,35 @@
+import React from "react";
+import styles from "./styles.css";
+import { useState, useEffect } from "react";
+
+function App() {
+  const [fruit, setFruit] = useState("Apple");
+  const [input, setInput] = useState('');
+
+  const handleSubmit = (event_obj) => {
+    //event_obj.preventDefault();
+    //setInput(input);
+    console.log("Input value:", fruit);
+    setFruit(input);
+  }
+
+  return (
+    <div className="App">
+      <h1 className="frui_t">{fruit}</h1>
+      <button onClick = {() => {setFruit("Papaya")}}> Change fruit</button>
+
+      <div>
+        <form onSubmit = {handleSubmit}>
+          <label className="labe_l">Enter new fruit:</label>
+          <input type="text" 
+          value ={input} 
+          onChange = {(event_obj) => {setInput(event_obj.target.value)}}
+          />
+          <button type="submit">Submit</button>
+        </form>
+    </div>
+  </div>
+  );
+}
+
+export default App;
