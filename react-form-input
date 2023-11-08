@@ -7,7 +7,7 @@ function App() {
   const [input, setInput] = useState('');
 
   const handleSubmit = (event_obj) => {
-    //event_obj.preventDefault();
+    event_obj.preventDefault();
     //setInput(input);
     console.log("Input value:", fruit);
     setFruit(input);
